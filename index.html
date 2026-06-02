@@ -1,387 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MTMB Hustle</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-    background:#050505;
-    color:white;
-    font-family:'Montserrat',sans-serif;
-    overflow-x:hidden;
+background:#050505;
+color:white;
 }
 
-/* NAVBAR */
-
-header{
-    position:fixed;
-    width:100%;
-    top:0;
-    left:0;
-    z-index:999;
-    background:rgba(0,0,0,0.85);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(255,255,255,0.08);
-}
-
-.navbar{
-    width:90%;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 0;
-}
-
-.logo{
-    font-family:'Anton',sans-serif;
-    font-size:2.2rem;
-    letter-spacing:3px;
-    color:#d8b07c;
+.top-bar{
+background:#000;
+padding:12px;
+text-align:center;
+font-size:12px;
+letter-spacing:1px;
 }
 
 nav{
-    display:flex;
-    gap:35px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 5%;
+border-bottom:1px solid #222;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    font-size:.95rem;
-    transition:.3s;
-    font-weight:500;
+.logo{
+font-size:42px;
+font-weight:900;
+font-style:italic;
 }
 
-nav a:hover{
-    color:#d8b07c;
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+font-size:14px;
 }
 
-/* HERO */
+nav li{
+cursor:pointer;
+}
 
 .hero{
-    min-height:100vh;
-    background:
-    linear-gradient(to right, rgba(0,0,0,.9), rgba(0,0,0,.55)),
-    url('mtmb-background.jpg') center/cover no-repeat;
-    display:flex;
-    align-items:center;
-    padding:120px 8%;
-}
-
-.hero-content{
-    max-width:750px;
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+padding:60px 5%;
+gap:40px;
 }
 
 .hero h1{
-    font-family:'Anton',sans-serif;
-    font-size:7rem;
-    line-height:92%;
-    color:#f3e8da;
-    margin-bottom:25px;
+font-size:95px;
+line-height:.9;
+font-weight:900;
+text-transform:uppercase;
+}
+
+.hero h1 span{
+color:#b89a6a;
 }
 
 .hero p{
-    color:#ddd;
-    font-size:1.2rem;
-    line-height:1.8;
-    margin-bottom:40px;
-    max-width:600px;
+margin:25px 0;
+font-size:18px;
+max-width:550px;
+color:#ddd;
 }
 
 .hero-buttons{
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
+display:flex;
+gap:15px;
 }
 
-.btn{
-    padding:16px 38px;
-    border:none;
-    cursor:pointer;
-    font-weight:700;
-    letter-spacing:1px;
-    transition:.3s;
-    font-size:.95rem;
+.gold-btn{
+background:#b89a6a;
+border:none;
+padding:15px 35px;
+font-weight:700;
+cursor:pointer;
 }
 
-.primary-btn{
-    background:#d8b07c;
-    color:black;
+.outline-btn{
+background:transparent;
+border:1px solid #b89a6a;
+color:white;
+padding:15px 35px;
+cursor:pointer;
 }
 
-.primary-btn:hover{
-    background:white;
-    transform:translateY(-4px);
+.hero-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:6px;
 }
 
-.secondary-btn{
-    background:transparent;
-    border:2px solid #d8b07c;
-    color:#d8b07c;
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+padding:0 5% 60px;
 }
 
-.secondary-btn:hover{
-    background:#d8b07c;
-    color:black;
+.card{
+background:#0d0d0d;
+border:1px solid #222;
+padding:30px;
+min-height:350px;
 }
 
-/* SECTION TITLE */
-
-.section-title{
-    text-align:center;
-    margin-bottom:70px;
+.card h2{
+color:#b89a6a;
+font-size:32px;
+margin-bottom:15px;
 }
 
-.section-title h2{
-    font-family:'Anton',sans-serif;
-    font-size:4rem;
-    letter-spacing:2px;
-    color:#f3e8da;
+.card h3{
+font-size:42px;
+line-height:1;
+margin-bottom:20px;
 }
 
-.section-title p{
-    color:#999;
-    margin-top:15px;
+.card p{
+color:#ccc;
+line-height:1.5;
 }
 
-/* CATEGORIES */
-
-.categories{
-    padding:120px 8%;
+.card button{
+margin-top:25px;
+padding:12px 24px;
+border:none;
+background:#b89a6a;
+cursor:pointer;
+font-weight:bold;
 }
 
-.category-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:35px;
+.best-sellers{
+padding:60px 5%;
 }
 
-.category-card{
-    background:#111;
-    overflow:hidden;
-    border:1px solid rgba(255,255,255,0.08);
-    transition:.4s;
+.best-sellers h2{
+text-align:center;
+font-size:42px;
+margin-bottom:40px;
+letter-spacing:3px;
 }
-
-.category-card:hover{
-    transform:translateY(-10px);
-    border-color:#d8b07c;
-}
-
-.category-card img{
-    width:100%;
-    height:420px;
-    object-fit:cover;
-}
-
-.category-content{
-    padding:30px;
-}
-
-.category-content h3{
-    font-family:'Anton',sans-serif;
-    font-size:2rem;
-    color:#d8b07c;
-    margin-bottom:15px;
-}
-
-.category-content p{
-    color:#bbb;
-    line-height:1.7;
-}
-
-/* PRODUCTS */
 
 .products{
-    padding:120px 8%;
-    background:#0b0b0b;
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:20px;
 }
 
-.product-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
+.product{
+background:#0d0d0d;
+padding:15px;
+text-align:center;
+border:1px solid #222;
 }
 
-.product-card{
-    background:#111;
-    padding-bottom:25px;
-    transition:.3s;
-    border:1px solid rgba(255,255,255,0.05);
+.product img{
+width:100%;
+height:220px;
+object-fit:cover;
 }
 
-.product-card:hover{
-    transform:translateY(-8px);
+.product h4{
+margin-top:15px;
+font-size:14px;
 }
 
-.product-card img{
-    width:100%;
-    height:300px;
-    object-fit:cover;
+.product span{
+display:block;
+margin-top:10px;
+color:#b89a6a;
+font-weight:bold;
 }
 
-.product-info{
-    padding:25px;
+.testimonials{
+padding:60px 5%;
 }
 
-.product-info h4{
-    margin-bottom:10px;
-    font-size:1.1rem;
+.testimonials h2{
+font-size:60px;
+margin-bottom:30px;
 }
 
-.price{
-    color:#d8b07c;
-    font-weight:700;
+.reviews{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
 }
 
-/* COMMUNITY */
-
-.community{
-    padding:120px 8%;
+.review{
+background:#111;
+padding:25px;
+border:1px solid #222;
 }
 
-.community-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
+.review p{
+margin-top:15px;
+color:#ddd;
 }
-
-.community-box{
-    background:#101010;
-    padding:35px;
-    border-left:4px solid #d8b07c;
-}
-
-.community-box p{
-    color:#ccc;
-    line-height:1.8;
-    margin-bottom:20px;
-}
-
-.community-box h5{
-    color:#d8b07c;
-}
-
-/* NEWSLETTER */
 
 .newsletter{
-    padding:120px 8%;
-    text-align:center;
-    background:
-    linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.9)),
-    url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+padding:70px 5%;
+background:#111;
+text-align:center;
 }
 
 .newsletter h2{
-    font-family:'Anton',sans-serif;
-    font-size:4rem;
-    margin-bottom:20px;
-}
-
-.newsletter p{
-    color:#ddd;
-    margin-bottom:35px;
+font-size:56px;
+margin-bottom:20px;
 }
 
 .newsletter form{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:15px;
+display:flex;
+justify-content:center;
+margin-top:25px;
 }
 
 .newsletter input{
-    width:400px;
-    padding:16px;
-    border:none;
-    background:#111;
-    color:white;
+width:450px;
+padding:18px;
+border:none;
+outline:none;
 }
 
-/* FOOTER */
+.newsletter button{
+padding:18px 30px;
+background:#b89a6a;
+border:none;
+font-weight:bold;
+cursor:pointer;
+}
 
 footer{
-    background:black;
-    padding:80px 8% 40px;
-}
-
-.footer-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:40px;
+padding:60px 5%;
+border-top:1px solid #222;
 }
 
 .footer-logo{
-    font-family:'Anton',sans-serif;
-    font-size:2rem;
-    color:#d8b07c;
-    margin-bottom:15px;
+font-size:42px;
+font-weight:900;
+margin-bottom:30px;
 }
 
 .footer-links{
-    display:flex;
-    flex-direction:column;
-    gap:14px;
+display:flex;
+justify-content:space-between;
+gap:30px;
 }
 
-.footer-links a{
-    text-decoration:none;
-    color:#aaa;
-    transition:.3s;
+.footer-links h4{
+color:#b89a6a;
+margin-bottom:15px;
 }
 
-.footer-links a:hover{
-    color:#d8b07c;
+.footer-links p{
+margin-bottom:10px;
+color:#ccc;
 }
 
-.copyright{
-    text-align:center;
-    margin-top:60px;
-    color:#666;
-    border-top:1px solid rgba(255,255,255,0.08);
-    padding-top:30px;
+@media(max-width:1200px){
+
+.products{
+grid-template-columns:repeat(3,1fr);
 }
 
-/* MOBILE */
+}
 
 @media(max-width:900px){
 
-    .hero h1{
-        font-size:4.5rem;
-    }
+.hero{
+grid-template-columns:1fr;
+}
 
-    nav{
-        display:none;
-    }
+.cards{
+grid-template-columns:1fr;
+}
+
+.products{
+grid-template-columns:repeat(2,1fr);
+}
+
+.reviews{
+grid-template-columns:1fr;
+}
+
+nav ul{
+display:none;
+}
+
+.hero h1{
+font-size:60px;
+}
 
 }
 
 @media(max-width:600px){
 
-    .hero h1{
-        font-size:3.5rem;
-    }
+.products{
+grid-template-columns:1fr;
+}
 
-    .section-title h2{
-        font-size:2.5rem;
-    }
+.newsletter form{
+flex-direction:column;
+gap:15px;
+}
+
+.newsletter input{
+width:100%;
+}
 
 }
 
@@ -390,167 +331,119 @@ footer{
 
 <body>
 
-<header>
-
-<div class="navbar">
-
-<div class="logo">MTMB HUSTLE</div>
-
-<nav>
-<a href="#">Home</a>
-<a href="#">Shop</a>
-<a href="#">Plain Clothing</a>
-<a href="#">Custom Clothing</a>
-<a href="#">Community</a>
-<a href="#">Contact</a>
-</nav>
-
+<div class="top-bar">
+FREE SHIPPING ON ORDERS OVER $75
 </div>
 
-</header>
+<nav>
+<div class="logo">MTMB</div>
 
-<!-- HERO -->
+<ul>
+<li>HOME</li>
+<li>SHOP</li>
+<li>CUSTOM CLOTHING</li>
+<li>ABOUT MTMB</li>
+<li>COMMUNITY</li>
+<li>CONTACT</li>
+</ul>
+</nav>
 
 <section class="hero">
 
-<div class="hero-content">
+<div class="hero-text">
 
 <h1>
-BUILT FROM HUSTLE.<br>
-BORN FROM THE TRIBE.
+BUILT FROM<br>
+HUSTLE.<br>
+<span>BORN FROM<br>
+THE TRIBE.</span>
 </h1>
 
 <p>
-MTMB Hustle is more than a clothing brand. It's a movement built on loyalty, strength, ambition, and hustle. Join the tribe and wear the mindset.
+MORE THAN CLOTHING. A MOVEMENT BUILT ON LOYALTY,
+HUSTLE, AND FAMILY.
 </p>
 
 <div class="hero-buttons">
-
-<button class="btn primary-btn">SHOP NOW</button>
-
-<button class="btn secondary-btn">JOIN THE TRIBE</button>
-
+<button class="gold-btn">SHOP NOW</button>
+<button class="outline-btn">JOIN THE TRIBE</button>
 </div>
 
 </div>
 
-</section>
-
-<!-- CATEGORIES -->
-
-<section class="categories">
-
-<div class="section-title">
-<h2>SHOP THE MOVEMENT</h2>
-<p>Three categories. One tribe.</p>
-</div>
-
-<div class="category-grid">
-
-<div class="category-card">
-
-<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1400&auto=format&fit=crop">
-
-<div class="category-content">
-
-<h3>Plain Clothing</h3>
-
-<p>
-Premium heavyweight essentials designed for comfort, movement, and everyday hustle.
-</p>
-
-</div>
-
-</div>
-
-<div class="category-card">
-
-<img src="https://images.unsplash.com/photo-1503342394128-c104d54dba01?q=80&w=1400&auto=format&fit=crop">
-
-<div class="category-content">
-
-<h3>Custom Clothing</h3>
-
-<p>
-Create your own designs, business apparel, team wear, and custom tribe merchandise.
-</p>
-
-</div>
-
-</div>
-
-<div class="category-card">
-
-<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1400&auto=format&fit=crop">
-
-<div class="category-content">
-
-<h3>Community Experience</h3>
-
-<p>
-Share your MTMB story, connect with the tribe, and inspire others through your journey.
-</p>
-
-</div>
-
-</div>
-
+<div class="hero-image">
+<img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=1200" alt="">
 </div>
 
 </section>
 
-<!-- PRODUCTS -->
+<section class="cards">
 
-<section class="products">
+<div class="card">
+<h2>01</h2>
+<h3>PLAIN CLOTHING</h3>
+<p>
+High quality essentials made to move with you.
+Simple. Clean. Built to last.
+</p>
+<button>SHOP PLAIN</button>
+</div>
 
-<div class="section-title">
+<div class="card">
+<h2>02</h2>
+<h3>CUSTOM CLOTHING</h3>
+<p>
+Your vision. Your design. Your tribe.
+We bring it to life.
+</p>
+<button>CREATE CUSTOM</button>
+</div>
+
+<div class="card">
+<h2>03</h2>
+<h3>COMMUNITY EXPERIENCE</h3>
+<p>
+We're more than a brand.
+We're a family built through hustle.
+</p>
+<button>JOIN COMMUNITY</button>
+</div>
+
+</section>
+
+<section class="best-sellers">
+
 <h2>BEST SELLERS</h2>
-<p>Built for hustlers.</p>
-</div>
 
-<div class="product-grid">
+<div class="products">
 
-<div class="product-card">
-
-<img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1200&auto=format&fit=crop">
-
-<div class="product-info">
-<h4>MTMB Hoodie</h4>
+<div class="product">
+<img src="https://via.placeholder.com/300x300">
+<h4>CLASSIC MTMB HOODIE</h4>
 
 </div>
 
-</div>
-
-<div class="product-card">
-
-<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop">
-
-<div class="product-info">
-<h4>Essential Tee</h4>
+<div class="product">
+<img src="https://via.placeholder.com/300x300">
+<h4>ESSENTIAL TEE</h4>
 
 </div>
 
-</div>
-
-<div class="product-card">
-
-<img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=1200&auto=format&fit=crop">
-
-<div class="product-info">
-<h4>Premium Joggers</h4>
+<div class="product">
+<img src="https://via.placeholder.com/300x300">
+<h4>PREMIUM JOGGERS</h4>
 
 </div>
 
-</div>
-
-<div class="product-card">
-
-<img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=1200&auto=format&fit=crop">
-
-<div class="product-info">
-<h4>MTMB Snapback</h4>
+<div class="product">
+<img src="https://via.placeholder.com/300x300">
+<h4>PERFORMANCE SHORTS</h4>
 
 </div>
+
+<div class="product">
+<img src="https://via.placeholder.com/300x300">
+<h4>TRIBE HOODIE</h4>
 
 </div>
 
@@ -558,115 +451,85 @@ Share your MTMB story, connect with the tribe, and inspire others through your j
 
 </section>
 
-<!-- COMMUNITY -->
+<section class="testimonials">
 
-<section class="community">
-
-<div class="section-title">
 <h2>THE TRIBE SPEAKS</h2>
-<p>Real stories. Real motivation.</p>
+
+<div class="reviews">
+
+<div class="review">
+★★★★★
+<p>"MTMB is more than clothing. It's a movement."</p>
 </div>
 
-<div class="community-grid">
-
-<div class="community-box">
-<p>
-“MTMB gives me motivation every day. The quality and message behind the brand are unmatched.”
-</p>
-<h5>- Devonte M.</h5>
+<div class="review">
+★★★★★
+<p>"The quality is unmatched and the tribe is real."</p>
 </div>
 
-<div class="community-box">
-<p>
-“This brand feels like family. Wearing MTMB makes me feel part of something bigger.”
-</p>
-<h5>- Jessica T.</h5>
-</div>
-
-<div class="community-box">
-<p>
-“Built from hustle really means something. The movement is real.”
-</p>
-<h5>- Tyler R.</h5>
+<div class="review">
+★★★★★
+<p>"Wearing MTMB makes me feel part of something bigger."</p>
 </div>
 
 </div>
 
 </section>
-
-<!-- NEWSLETTER -->
 
 <section class="newsletter">
 
 <h2>JOIN THE TRIBE</h2>
 
 <p>
-Get exclusive drops, community updates, and early access to new releases.
+Get early access to drops, tribe news and exclusive deals.
 </p>
 
 <form>
-
-<input type="email" placeholder="Enter your email address">
-
-<button class="btn primary-btn">JOIN NOW</button>
-
+<input type="email" placeholder="Enter your email">
+<button type="submit">JOIN NOW</button>
 </form>
 
 </section>
 
-<!-- FOOTER -->
-
 <footer>
 
-<div class="footer-grid">
+<div class="footer-logo">
+MTMB HUSTLE
+</div>
+
+<div class="footer-links">
 
 <div>
-
-<div class="footer-logo">MTMB HUSTLE</div>
-
-<p>
-Built from hustle. Born from the tribe.
-</p>
-
+<h4>SHOP</h4>
+<p>Plain Clothing</p>
+<p>Custom Clothing</p>
+<p>New Arrivals</p>
+<p>Best Sellers</p>
 </div>
 
-<div class="footer-links">
-
-<h4>Shop</h4>
-
-<a href="#">Plain Clothing</a>
-<a href="#">Custom Clothing</a>
-<a href="#">New Arrivals</a>
-<a href="#">Best Sellers</a>
-
+<div>
+<h4>CUSTOM</h4>
+<p>Start Your Order</p>
+<p>Team Orders</p>
+<p>Embroidery</p>
+<p>Business Orders</p>
 </div>
 
-<div class="footer-links">
-
-<h4>Company</h4>
-
-<a href="#">About MTMB</a>
-<a href="#">Community</a>
-<a href="#">Contact</a>
-<a href="#">FAQ</a>
-
+<div>
+<h4>HELP</h4>
+<p>Shipping Info</p>
+<p>Returns</p>
+<p>FAQ</p>
+<p>Terms of Service</p>
 </div>
 
-<div class="footer-links">
-
-<h4>Support</h4>
-
-<a href="#">Shipping</a>
-<a href="#">Returns</a>
-<a href="#">Track Order</a>
-<a href="#">Terms & Conditions</a>
-
+<div>
+<h4>CONTACT</h4>
+<p>support@mtmbhustle.com</p>
+<p>(904) 444-MTMB</p>
+<p>Jacksonville, FL</p>
 </div>
 
-</div>
-
-<div class="copyright">
-© 2026 MTMB HUSTLE — ALL RIGHTS RESERVED
 </div>
 
 </footer>
